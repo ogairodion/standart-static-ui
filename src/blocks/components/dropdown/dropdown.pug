@@ -1,0 +1,12 @@
+mixin dropdown(element)
+    .dropdown 
+        .dropdown__top
+            .dropdown__top-text= element.title
+            .dropdown__top-icon= element.icon
+        .dropdown__body
+            - if (element.list)
+                ul.dropdown__body-list
+                    each li in element.list
+                        li= li
+            - if (element.text)
+                .dropdown__body-text

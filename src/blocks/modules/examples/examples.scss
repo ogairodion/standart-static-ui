@@ -1,0 +1,26 @@
+.examples {
+    max-width: rem(500);
+    margin: rem(20) auto;
+    padding: rem(20);
+    border-radius: rem(8);
+    border: rem(1) solid #000;
+
+    &__title {
+        text-align: center;
+    }
+
+    &__item {
+        border-bottom: rem(1) solid #000;
+
+        &:not(first-child) {
+            padding: rem(20) 0;
+        }
+
+        &-text {
+            font-size: rem(18);
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: rem(20);
+        }
+    }
+}
