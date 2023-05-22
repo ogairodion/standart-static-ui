@@ -4,10 +4,12 @@ include ../.././components/dropdown/dropdown.pug
 .examples
     h1.examples__title Static Standart UI
     .examples__item
-        .examples__item-text Burger
+        .examples__item-text Burgers
         .examples__item-element
             +burger
     .examples__item
-        .examples__item-text Dropdown
+        .examples__item-text Dropdowns
         .examples__item-element
-            +dropdown({ title:"Dropdown title" })
+            +dropdown({ title:"Dropdown title", list: ["Lorem", "Lorem"], icon: "arrow" })
+        .examples__item-element
+            +dropdown({ title:"Dropdown title", text: "Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem", icon: "arrow" })

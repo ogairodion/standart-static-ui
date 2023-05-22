@@ -2,11 +2,16 @@ mixin dropdown(element)
     .dropdown 
         .dropdown__top
             .dropdown__top-text= element.title
-            .dropdown__top-icon= element.icon
+            - if (element.icon)
+                .dropdown__top-icon
+                    +svgMono(element.icon)
+            - if (element.img)
+                .dropdown__top-icon
+                    img(src=element.img)
         .dropdown__body
             - if (element.list)
                 ul.dropdown__body-list
                     each li in element.list
                         li= li
             - if (element.text)
-                .dropdown__body-text
+                .dropdown__body-text= element.text
