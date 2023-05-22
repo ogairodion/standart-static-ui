@@ -1,0 +1,29 @@
+mixin input(element)
+    // default
+    - if (element.type !== "number" && element.type !== "select" && element.type !== "checkbox" && element.type !== "radio")
+        .input
+            input(type=element.type required=element.required placeholder=element.placeholder)
+    
+    // number
+    - if (element.type == "number")
+        .input.input__number
+            .input__number-trigger.minus - 
+            input(type="number" required=element.required max=element.max min=element.min placeholder=element.placeholder)
+            .input__number-trigger.plus +
+
+    // checkbox
+    - if (element.type == "checkbox")
+        .input.checkbox  
+            input.checkbox__input(type="checkbox" value=element.value checked=element.checked)
+            .checkbox__btn
+            -if (element.text)
+                label.checkbox__text= element.text
+
+    // radio button
+    - if (element.type == "radio")
+        .input.radio  
+            input.radio__input(type="radio" value=element.value checked=element.checked name=element.name)
+            .radio__btn
+            -if (element.text)
+                label.radio__text= element.text
+    

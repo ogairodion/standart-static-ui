@@ -1,15 +1,52 @@
 include ../.././components/burger/burger.pug
+include ../.././components/input/input.pug
 include ../.././components/dropdown/dropdown.pug
 
 .examples
     h1.examples__title Static Standart UI
+
+    // Burgers
     .examples__item
         .examples__item-text Burgers
         .examples__item-element
             +burger
+
+    // Dropdowns
     .examples__item
         .examples__item-text Dropdowns
+        
+        // dropdowns list
         .examples__item-element
             +dropdown({ title:"Dropdown title", list: ["Lorem", "Lorem"], icon: "arrow" })
+        
+        // dropdowns text
         .examples__item-element
             +dropdown({ title:"Dropdown title", text: "Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem", icon: "arrow" })
+    
+    // Inputs
+    .examples__item
+        .examples__item-text Inputs
+        
+        // input text
+        .examples__item-element
+            +input({ type: "text", placeholder: "Example" })
+        
+        // input number
+        .examples__item-element
+            +input({ type: "number", min: "1", max: "100" })
+        
+        // checkbox without text
+        .examples__item-element
+            +input({ type: "checkbox" })
+        
+        // checkbox with text
+        .examples__item-element
+            +input({ type: "checkbox", text: "Text" })
+        
+        // radio button without text
+        .examples__item-element
+            +input({ type: "radio", name: 'radio' })
+
+        // radio button with text
+        .examples__item-element
+            +input({ type: "radio", text: "Text", name: 'radio' })
